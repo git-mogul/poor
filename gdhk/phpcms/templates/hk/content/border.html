@@ -1,0 +1,20 @@
+<ul>
+
+     {pc:content action="category" catid="0" num="20" siteid="$siteid" order="listorder ASC"}
+                            {loop $data $r}
+                            
+                                    {pc:content action="category" catid="$r['catid']" num="20" siteid="$siteid" order="listorder ASC"}
+                                    {loop $data $res}
+                                     <li id="menu53">
+                                        <a href="{$res['url']}">{$res['catname']}</a>
+                                     </li>
+                                    {/loop}
+                                    {/pc}
+                                
+                            {/loop}
+                        {/pc}
+   
+                    <!-- <li id="menu55">
+                        <a href="/cn/xydt/list_55.aspx">行业动态</a>
+                    </li> -->
+</ul>

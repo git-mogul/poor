@@ -1,0 +1,82 @@
+ {template 'content','head'}   
+    <div class="H_ban">
+        <div class="box">
+            <div class="Menu">
+                <h4>新闻中心</h4>
+                {pc:content action="category" catid="9" num="20" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $res}
+                        <li id="menu53">
+                            <a href="{$res['url']}">{$res['catname']}</a>
+                        </li>
+                {/loop}
+                {/pc}
+            </div>
+            <div class="ban02">
+                <a href=''><img src="{WEB_PATH}statics/home/uploadfiles/2013/10/201310211048184818.jpg" /></a>
+            </div>
+            <dl class="Current"><span>公司视频</span></dl>
+        </div>
+    </div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="Content">
+        <!--Sidebar-->
+        <div class="Sidebar">
+            <div class="Sub">
+                <h4>联系我们</h4>
+                <div class="box">
+                    <p> <span style="font-family:微软雅黑, 'MS Sans Serif', sans-serif;font-size:13px;line-height:normal;white-space:normal;background-color:#FFEDC4;"> </span></p>
+                    <p class="MsoNormal"> 广东华凯科技股份有限公司<span lang="EN-US">
+                            <o:p></o:p>
+                        </span> </p>
+                    <p class="MsoNormal"> 公司总机：<span lang="EN-US">0757</span>—<span lang="EN-US">87381388<o:p></o:p></span> </p>
+                    <p class="MsoNormal"> 销售分机：<span lang="EN-US">0757-87381388</span>（<span lang="EN-US">300</span>）<span lang="EN-US">
+                            <o:p></o:p>
+                        </span> </p>
+                    <p class="MsoNormal"> 人资分机：<span lang="EN-US">0757-87381388</span>（<span lang="EN-US">379</span>）<span lang="EN-US">
+                            <o:p></o:p>
+                        </span> </p>
+                    <p class="MsoNormal"> 地<span lang="EN-US">&nbsp; &nbsp; &nbsp;&nbsp;</span>址：广东省佛山市三水区中心科技工业区<span lang="EN-US">A</span>区<span lang="EN-US">19</span>号<span lang="EN-US">
+                            <o:p></o:p>
+                        </span> </p>
+                    <p> <br /></p>
+                    <p> <span style="font-family:微软雅黑, 'MS Sans Serif', sans-serif;font-size:13px;line-height:normal;white-space:normal;background-color:#FFEDC4;"></span></p>
+                </div>
+            </div>
+        </div>
+        <!--Sidebar End-->
+        <!--Right-->
+        <div class="RightSidebar">
+            <div class="MainContent">
+                <!--Star-->
+
+                <ul class="News_list">
+                     {pc:content action="lists" catid="$catid" num="2" order="id DESC" page="$page"}
+                        {loop $data $r}
+                            <!-- <tr>
+                                <td><a href="{$r['url']}">{$r['title']} </a></td>
+                                <td class="tc">{date('Y-m-d',$r[inputtime])}</td>
+                            </tr> -->
+                            <li>
+                                <div class="pic"><a href="{$r['url']}"><img src="{$r['thumb']}" onerror="this.src='/res/images/nofile.jpg'" /></a></div>
+                                <h4><span>{date('Y-m-d',$r[inputtime])}</span><a href="{$r['url']}">{$r['title']}</a></h4>
+                                <dl> {$r['description']}<a href="{$r['url']}">详细+</a></dl>
+                            </li>
+
+                        {/loop}
+                                
+                    {/pc}
+
+
+                </ul>
+                <!--Pages-->
+                
+                <div class="Pages"> {$pages}</div>
+                <!--Pages-->
+                <!--End-->
+            </div>
+        </div>
+        <!--Right End-->
+        <div class="Space45"></div>
+    </div>
+{template 'content','foot'}

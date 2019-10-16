@@ -1,0 +1,66 @@
+{template 'content','head'}
+    <!--top End-->
+    <!--ban-->
+    <div class="H_ban">
+        <div class="box">
+            <div class="Menu">
+                <h4>公司旅游</h4>
+                <ul>
+                {pc:content action="category" catid="19" num="20" siteid="$siteid" order="listorder ASC"}
+                    {loop $data $res}
+                        <li id="menu53">
+                            <a href="{$res['url']}">{$res['catname']}</a>
+                        </li>
+                {/loop}
+                {/pc}
+                </ul>
+            </div>
+            <div class="ban02">
+                <a href=''><img src="{WEB_PATH}statics/home/uploadfiles/2013/10/201310211048304830.jpg" /></a>
+            </div>
+            <dl class="Current"><span>我们的足迹</span></dl>
+        </div>
+    </div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="Content">
+        <!--Sidebar-->
+        <div class="Sidebar">
+            <div class="Sub">
+                <h4>走过的山河</h4>
+                <div class="box">
+                    
+                    <p class="MsoNormal"> 读万卷书不如行万里路,劳逸结合,方为上策.<span lang="EN-US">
+                            <o:p></o:p>
+                        </span> </p>
+                   
+                </div>
+            </div>
+        </div>
+        <!--Sidebar End-->
+        <!--Right-->
+        <div class="RightSidebar">
+            <div class="MainContent" style="text-align:center;">
+                <!--Star-->
+                   
+                    {pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page" moreinfo="1"}
+                    {loop $data $r}
+                       <div style="text-align:center;display:inline-block;margin-left:10px;">
+                            <a target='_blank' href="{$r['url']}">
+                               <img src="{$r['thumb']}" width="100px">
+                                <dl class="Info">{$r['title']}</dl>
+                            </a>
+                        </div>
+                      {/loop}
+            
+                {/pc}
+                <!--End-->
+            </div>
+        </div>
+        <!--Right End-->
+        <div class="Space45"></div>
+    </div>
+    <!--End-->
+    <!--bottom-->
+    
+{template 'content','foot'}
